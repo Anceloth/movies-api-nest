@@ -1,4 +1,6 @@
-# 🚀 NestJS Clean Architecture Template
+# 🚀 Movies API 
+# NestJS Clean Architecture 
+
 
 <div align="center">
 
@@ -7,7 +9,7 @@
 ![PostgreSQL](https://img.shields.io/badge/postgresql-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 
-*A production-ready template with Clean Architecture, DDD principles, and modern best practices*
+*A production-ready API with Clean Architecture, DDD principles, and modern best practices*
 
 </div>
 
@@ -123,7 +125,7 @@ src/
 ```bash
 # 1. Clone the repository
 git clone <repository-url>
-cd template-typeorm-nest
+cd movies-api-nest
 
 # 2. Install dependencies
 npm install
