@@ -1,0 +1,333 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2025-09-07T23:20:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "req_001",
+      "parentId": "fld_001",
+      "modified": 1725744000000,
+      "created": 1725744000000,
+      "url": "{{ _.baseUrl }}/movies",
+      "name": "1. Crear Película",
+      "description": "Crea una nueva película en el sistema",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"title\": \"El Padrino\",\n  \"genre\": \"Drama\",\n  \"director\": \"Francis Ford Coppola\",\n  \"releaseDate\": \"1972-03-24\"\n}"
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "parameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_002",
+      "parentId": "fld_001",
+      "modified": 1725744000000,
+      "created": 1725744000000,
+      "url": "{{ _.baseUrl }}/movies",
+      "name": "2. Obtener Todas las Películas",
+      "description": "Obtiene todas las películas activas",
+      "method": "GET",
+      "body": {},
+      "headers": [],
+      "authentication": {},
+      "parameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_003",
+      "parentId": "fld_001",
+      "modified": 1725744000000,
+      "created": 1725744000000,
+      "url": "{{ _.baseUrl }}/movies?page=1&limit=5",
+      "name": "2.1. Obtener Películas con Paginación",
+      "description": "Obtiene películas con paginación específica",
+      "method": "GET",
+      "body": {},
+      "headers": [],
+      "authentication": {},
+      "parameters": [
+        {
+          "name": "page",
+          "value": "1",
+          "description": "Número de página",
+          "disabled": false
+        },
+        {
+          "name": "limit",
+          "value": "5",
+          "description": "Tamaño de página",
+          "disabled": false
+        }
+      ],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_004",
+      "parentId": "fld_001",
+      "modified": 1725744000000,
+      "created": 1725744000000,
+      "url": "{{ _.baseUrl }}/movies?activeOnly=true",
+      "name": "2.2. Obtener Solo Películas Activas",
+      "description": "Obtiene solo las películas activas",
+      "method": "GET",
+      "body": {},
+      "headers": [],
+      "authentication": {},
+      "parameters": [
+        {
+          "name": "activeOnly",
+          "value": "true",
+          "description": "Solo películas activas",
+          "disabled": false
+        }
+      ],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_005",
+      "parentId": "fld_001",
+      "modified": 1725744000000,
+      "created": 1725744000000,
+      "url": "{{ _.baseUrl }}/movies/{{ _.movieId }}",
+      "name": "3. Obtener Película por ID",
+      "description": "Obtiene una película específica por su ID",
+      "method": "GET",
+      "body": {},
+      "headers": [],
+      "authentication": {},
+      "parameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_006",
+      "parentId": "fld_001",
+      "modified": 1725744000000,
+      "created": 1725744000000,
+      "url": "{{ _.baseUrl }}/movies/{{ _.movieId }}",
+      "name": "4. Actualizar Película",
+      "description": "Actualiza una película existente",
+      "method": "PATCH",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"title\": \"El Padrino - Edición Especial\",\n  \"genre\": \"Drama\"\n}"
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "parameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_007",
+      "parentId": "fld_001",
+      "modified": 1725744000000,
+      "created": 1725744000000,
+      "url": "{{ _.baseUrl }}/movies/{{ _.movieId }}",
+      "name": "5. Eliminar Película",
+      "description": "Elimina una película del sistema",
+      "method": "DELETE",
+      "body": {},
+      "headers": [],
+      "authentication": {},
+      "parameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_008",
+      "parentId": "fld_002",
+      "modified": 1725744000000,
+      "created": 1725744000000,
+      "url": "{{ _.baseUrl }}/movies",
+      "name": "Crear - Pulp Fiction",
+      "description": "Ejemplo: Crear película Pulp Fiction",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"title\": \"Pulp Fiction\",\n  \"genre\": \"Crimen\",\n  \"director\": \"Quentin Tarantino\",\n  \"releaseDate\": \"1994-10-14\"\n}"
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "parameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_009",
+      "parentId": "fld_002",
+      "modified": 1725744000000,
+      "created": 1725744000000,
+      "url": "{{ _.baseUrl }}/movies",
+      "name": "Crear - El Señor de los Anillos",
+      "description": "Ejemplo: Crear película El Señor de los Anillos",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"title\": \"El Señor de los Anillos: La Comunidad del Anillo\",\n  \"genre\": \"Fantasía\",\n  \"director\": \"Peter Jackson\",\n  \"releaseDate\": \"2001-12-19\"\n}"
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "parameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_010",
+      "parentId": "fld_002",
+      "modified": 1725744000000,
+      "created": 1725744000000,
+      "url": "{{ _.baseUrl }}/movies",
+      "name": "Crear - Inception",
+      "description": "Ejemplo: Crear película Inception",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"title\": \"Inception\",\n  \"genre\": \"Ciencia Ficción\",\n  \"director\": \"Christopher Nolan\",\n  \"releaseDate\": \"2010-07-16\"\n}"
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "parameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_001",
+      "parentId": "wrk_001",
+      "modified": 1725744000000,
+      "created": 1725744000000,
+      "name": "Movies - CRUD",
+      "description": "Main collection to test movie CRUD operations",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1725744000000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_002",
+      "parentId": "wrk_001",
+      "modified": 1725744000000,
+      "created": 1725744000000,
+      "name": "Movie Examples",
+      "description": "Example movies to create",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1725744000000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_001",
+      "parentId": null,
+      "modified": 1725744000000,
+      "created": 1725744000000,
+      "name": "Movies API - Cinema System",
+      "description": "REST API for movie management in the cinema system",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_001",
+      "parentId": "wrk_001",
+      "modified": 1725744000000,
+      "created": 1725744000000,
+      "name": "Base Environment",
+      "data": {
+        "baseUrl": "http://localhost:3000/api/v1",
+        "movieId": "7df1af2a-3f9a-4c52-91fa-a66680952ada"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "baseUrl",
+          "movieId"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1725744000000,
+      "_type": "environment"
+    }
+  ]
+}
