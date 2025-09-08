@@ -177,6 +177,69 @@ chmod +x scripts/setup.sh
 
 ---
 
+## 🧪 Testing
+
+### 📊 **Test Coverage**
+
+This project includes comprehensive test coverage with both unit and e2e tests:
+
+| Test Type | Coverage | Description |
+|-----------|----------|-------------|
+| 🧪 **Unit Tests** | 68 tests | Use cases, controllers, and business logic |
+| 🔄 **E2E Tests** | 2 tests | End-to-end API integration tests |
+| 📈 **Coverage** | ~23% | Excludes migrations, config, and modules |
+
+### 🚀 **Running Tests**
+
+```bash
+# Run all tests
+npm test
+
+# Run tests with coverage
+npm run test:cov
+
+# Run e2e tests
+npm run test:e2e
+
+# Run specific test files
+npm test -- --testPathPattern="movie.*spec.ts"
+npm test -- --testPathPattern="room.*spec.ts"
+
+# Run tests in watch mode
+npm test -- --watch
+
+# Run tests with verbose output
+npm test -- --verbose
+```
+
+### 📁 **Test Structure**
+
+```
+src/
+├── application/use-cases/
+│   ├── movie/
+│   │   ├── create-movie.use-case.spec.ts
+│   │   ├── get-movie.use-case.spec.ts
+│   │   ├── get-movies.use-case.spec.ts
+│   │   ├── update-movie.use-case.spec.ts
+│   │   └── delete-movie.use-case.spec.ts
+│   └── room/
+│       ├── create-room.use-case.spec.ts
+│       ├── get-room.use-case.spec.ts
+│       ├── get-rooms.use-case.spec.ts
+│       ├── update-room.use-case.spec.ts
+│       └── delete-room.use-case.spec.ts
+├── presentation/controllers/
+│   ├── movie.controller.spec.ts
+│   └── room.controller.spec.ts
+└── test/
+    └── rooms.e2e-spec.ts
+```
+
+
+
+---
+
 ## 🛠️ Development
 
 ### 📜 **Available Scripts**
@@ -188,6 +251,8 @@ chmod +x scripts/setup.sh
 | 🚀 `start:dev` | Development with hot reload | `npm run start:dev` |
 | 🏗️ `build` | Build for production | `npm run build` |
 | 🧪 `test` | Run unit tests | `npm run test` |
+| 🔍 `test:cov` | Run tests with coverage | `npm run test:cov` |
+| 🔄 `test:e2e` | Run e2e tests | `npm run test:e2e` |
 | 🔍 `lint` | Run ESLint | `npm run lint` |
 | 🗄️ `migration:run` | Run database migrations | `npm run migration:run` |
 | 🌱 `seed` | Run database seeders | `npm run seed` |
@@ -232,14 +297,6 @@ npm run seed:run
 *Default password for all users: `password123`*
 
 </details>
-
-### 🧪 **Testing**
-
-```bash
-npm run test        # Unit tests
-npm run test:e2e    # End-to-end tests  
-npm run test:cov    # Test coverage
-```
 
 ---
 
