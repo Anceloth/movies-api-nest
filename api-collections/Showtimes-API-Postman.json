@@ -19,6 +19,33 @@
       }
     },
     {
+      "name": "6.1. Purchase Ticket - Error Past Showtime",
+      "request": {
+        "method": "POST",
+        "header": [ { "key": "Content-Type", "value": "application/json" } ],
+        "url": { "raw": "{{baseUrl}}/showtimes/{{showtimeId}}/tickets", "host": ["{{baseUrl}}"], "path": ["showtimes", "{{showtimeId}}", "tickets"] },
+        "body": { "mode": "raw", "raw": "{\n  \"purchaserName\": \"Past Buyer\"\n}" }
+      }
+    },
+    {
+      "name": "6.2. Purchase Ticket - Error Capacity Exceeded",
+      "request": {
+        "method": "POST",
+        "header": [ { "key": "Content-Type", "value": "application/json" } ],
+        "url": { "raw": "{{baseUrl}}/showtimes/{{showtimeId}}/tickets", "host": ["{{baseUrl}}"], "path": ["showtimes", "{{showtimeId}}", "tickets"] },
+        "body": { "mode": "raw", "raw": "{\n  \"purchaserName\": \"Over Capacity\"\n}" }
+      }
+    },
+    {
+      "name": "6. Purchase Ticket",
+      "request": {
+        "method": "POST",
+        "header": [ { "key": "Content-Type", "value": "application/json" } ],
+        "url": { "raw": "{{baseUrl}}/showtimes/{{showtimeId}}/tickets", "host": ["{{baseUrl}}"], "path": ["showtimes", "{{showtimeId}}", "tickets"] },
+        "body": { "mode": "raw", "raw": "{\n  \"purchaserName\": \"Alice Example\"\n}" }
+      }
+    },
+    {
       "name": "2. Get All Showtimes",
       "request": {
         "method": "GET",
