@@ -34,7 +34,7 @@ graph TB
 | Layer | Responsibility | Examples |
 |-------|---------------|----------|
 | 🏗️ **Domain** | Pure business logic | Entities, Value Objects, Domain Services |
-| 📋 **Application** | Use cases & orchestration | Create User, Get User |
+| 📋 **Application** | Use cases & orchestration | Create Movie, Purchase Ticket |
 | 🔧 **Infrastructure** | External concerns | Database, APIs, File System |
 | 🌐 **Presentation** | HTTP layer | Controllers, DTOs, Validation |
 
@@ -179,15 +179,14 @@ chmod +x scripts/setup.sh
 
 ## 🧪 Testing
 
-### 📊 **Test Coverage**
+### 📊 **Test Summary**
 
-This project includes comprehensive test coverage with both unit and e2e tests:
+This project includes unit and e2e tests:
 
-| Test Type | Coverage | Description |
-|-----------|----------|-------------|
-| 🧪 **Unit Tests** | 68 tests | Use cases, controllers, and business logic |
-| 🔄 **E2E Tests** | 2 tests | End-to-end API integration tests |
-| 📈 **Coverage** | ~23% | Excludes migrations, config, and modules |
+- 🧪 Total test suites: 16
+- ✅ Total tests: 81
+- 🔄 E2E suites: 3 (Rooms, Showtimes)
+- 📈 Coverage excludes migrations, config and modules
 
 ### 🚀 **Running Tests**
 
@@ -212,29 +211,34 @@ npm test -- --watch
 npm test -- --verbose
 ```
 
-### 📁 **Test Structure**
+### 📁 **Test Structure (excerpt)**
 
 ```
 src/
 ├── application/use-cases/
-│   ├── movie/
-│   │   ├── create-movie.use-case.spec.ts
-│   │   ├── get-movie.use-case.spec.ts
-│   │   ├── get-movies.use-case.spec.ts
-│   │   ├── update-movie.use-case.spec.ts
-│   │   └── delete-movie.use-case.spec.ts
-│   └── room/
-│       ├── create-room.use-case.spec.ts
-│       ├── get-room.use-case.spec.ts
-│       ├── get-rooms.use-case.spec.ts
-│       ├── update-room.use-case.spec.ts
-│       └── delete-room.use-case.spec.ts
+│   ├── movie/*spec.ts
+│   ├── room/*spec.ts
+│   └── showtime/*spec.ts
 ├── presentation/controllers/
 │   ├── movie.controller.spec.ts
-│   └── room.controller.spec.ts
+│   ├── room.controller.spec.ts
+│   └── showtime.controller.spec.ts
 └── test/
-    └── rooms.e2e-spec.ts
+    ├── rooms.e2e-spec.ts
+    ├── showtimes.e2e-spec.ts
+    └── tickets.e2e-spec.ts
 ```
+
+### 📦 API Collections (Insomnia/Postman)
+
+Import the ready-to-use collections to try the API quickly:
+
+- Insomnia: `api-collections/Showtimes-API-Insomnia.json`, `api-collections/Movies-API-Insomnia.json`, `api-collections/Rooms-API-Insomnia.json`
+- Postman: `api-collections/Showtimes-API-Postman.json`
+
+How to use:
+- Insomnia: Application > Import > From File > select the JSON
+- Postman: File > Import > Upload Files > select the JSON
 
 
 
@@ -289,25 +293,17 @@ npm run seed
 npm run seed:run
 ```
 
-**Default Users Created:**
-- 👨‍💼 **John Doe** - john.doe@example.com
-- 👩‍💼 **Jane Smith** - jane.smith@example.com  
-- 🔑 **Admin User** - admin@example.com
-
-*Default password for all users: `password123`*
+> Seeders include sample data for movies, rooms, and showtimes for development.
 
 </details>
 
 ---
 
-## 🌐 API Endpoints
+## 🌐 API Documentation
 
-| Method | Endpoint | Description | Response |
-|--------|----------|-------------|----------|
-| 🟢 `POST` | `/users` | Create new user | `201 Created` |
-| 🔵 `GET` | `/users/:id` | Get user by ID | `200 OK` |
-| 💚 `GET` | `/health` | Health check | `200 OK` |
-| 📚 `GET` | `/api/docs` | API documentation | Swagger UI |
+Explore and test all endpoints via Swagger UI:
+
+- 📚 `http://localhost:3000/api/docs`
 
 ---
 
