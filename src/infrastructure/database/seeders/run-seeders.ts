@@ -2,7 +2,6 @@ import 'reflect-metadata';
 import { DataSource } from 'typeorm';
 import { ConfigService } from '@nestjs/config';
 import { MainSeeder } from './main.seeder';
-import { UserModel } from '../../models/user.model';
 import { MovieModel } from '../../models/movie.model';
 import { RoomModel } from '../../models/room.model';
 import { ShowtimeModel } from '../../models/showtime.model';
@@ -32,7 +31,7 @@ const AppDataSource = new DataSource({
   database: configService.get('DB_DATABASE'),
   synchronize: false, // Don't auto-sync in seeders
   logging: configService.get('DB_LOGGING') === 'true',
-  entities: [UserModel, MovieModel, RoomModel, ShowtimeModel],
+  entities: [MovieModel, RoomModel, ShowtimeModel],
 });
 
 async function runSeeders() {

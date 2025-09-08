@@ -3,8 +3,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
 import { ThrottlerModule } from '@nestjs/throttler';
-import { AppController } from './presentation/controllers/app.controller';
-import { UserModule } from './infrastructure/modules/user.module';
+// import { AppController } from './presentation/controllers/app.controller';
 import { MovieModule } from './infrastructure/modules/movie.module';
 import { RoomModule } from './infrastructure/modules/room.module';
 import { ShowtimeModule } from './infrastructure/modules/showtime.module';
@@ -37,12 +36,11 @@ import { ResponseInterceptor } from './shared/interceptors/response.interceptor'
       ],
       inject: [ConfigService],
     }),
-    UserModule,
     MovieModule,
     RoomModule,
     ShowtimeModule,
   ],
-  controllers: [AppController],
+  controllers: [],
   providers: [
     {
       provide: APP_FILTER,
