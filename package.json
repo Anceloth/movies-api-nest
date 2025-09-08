@@ -101,9 +101,28 @@
       "^.+\\.(t|j)s$": "ts-jest"
     },
     "collectCoverageFrom": [
-      "**/*.(t|j)s"
+      "**/*.(t|j)s",
+      "!**/*.module.ts",
+      "!**/migrations/**",
+      "!**/seeders/**",
+      "!**/config/**",
+      "!**/data-source.ts",
+      "!**/main.ts",
+      "!**/app.module.ts"
     ],
     "coverageDirectory": "../coverage",
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/",
+      "/coverage/",
+      "/test/"
+    ],
+    "modulePathIgnorePatterns": [
+      "<rootDir>/infrastructure/database/migrations/",
+      "<rootDir>/infrastructure/database/seeders/",
+      "<rootDir>/infrastructure/config/",
+      "<rootDir>/infrastructure/database/data-source.ts"
+    ]
   }
 }
