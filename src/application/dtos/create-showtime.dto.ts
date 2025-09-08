@@ -27,8 +27,7 @@ export class CreateShowtimeDto {
   })
   @IsDateString()
   @IsNotEmpty()
-  // @Transform(({ value }) => new Date(value))
-  startTime: Date;
+  startTime: string;
 
   @ApiProperty({
     description: 'Movie duration in minutes',

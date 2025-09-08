@@ -1,0 +1,139 @@
+{
+  "info": {
+    "_postman_id": "e1c6a5c4-0e6e-4f1a-bf4a-1b6e2faaa001",
+    "name": "Showtimes API - Cinema System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "CRUD de showtimes con filtros y ejemplos"
+  },
+  "item": [
+    {
+      "name": "1. Create Showtime",
+      "request": {
+        "method": "POST",
+        "header": [ { "key": "Content-Type", "value": "application/json" } ],
+        "url": { "raw": "{{baseUrl}}/showtimes", "host": ["{{baseUrl}}"], "path": ["showtimes"] },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"movieId\": \"{{movieId}}\",\n  \"roomId\": \"{{roomId}}\",\n  \"startTime\": \"2025-12-01T19:00:00.000Z\",\n  \"durationMinutes\": 120\n}"
+        }
+      }
+    },
+    {
+      "name": "2. Get All Showtimes",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/showtimes", "host": ["{{baseUrl}}"], "path": ["showtimes"] }
+      }
+    },
+    {
+      "name": "2.1. Get Only Active Showtimes",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/showtimes?activeOnly=true",
+          "host": ["{{baseUrl}}"],
+          "path": ["showtimes"],
+          "query": [ { "key": "activeOnly", "value": "true" } ]
+        }
+      }
+    },
+    {
+      "name": "2.2. Filter by Movie",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/showtimes?movieId={{movieId}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["showtimes"],
+          "query": [ { "key": "movieId", "value": "{{movieId}}" } ]
+        }
+      }
+    },
+    {
+      "name": "2.3. Filter by Room",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/showtimes?roomId={{roomId}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["showtimes"],
+          "query": [ { "key": "roomId", "value": "{{roomId}}" } ]
+        }
+      }
+    },
+    {
+      "name": "2.4. Filter by Date Range",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/showtimes?startDate=2025-12-01&endDate=2025-12-07",
+          "host": ["{{baseUrl}}"],
+          "path": ["showtimes"],
+          "query": [
+            { "key": "startDate", "value": "2025-12-01" },
+            { "key": "endDate", "value": "2025-12-07" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "3. Get Showtime by ID",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/showtimes/{{showtimeId}}", "host": ["{{baseUrl}}"], "path": ["showtimes", "{{showtimeId}}"] }
+      }
+    },
+    {
+      "name": "4. Update Showtime",
+      "request": {
+        "method": "PATCH",
+        "header": [ { "key": "Content-Type", "value": "application/json" } ],
+        "url": { "raw": "{{baseUrl}}/showtimes/{{showtimeId}}", "host": ["{{baseUrl}}"], "path": ["showtimes", "{{showtimeId}}"] },
+        "body": { "mode": "raw", "raw": "{\n  \"startTime\": \"2025-12-02T21:15:00.000Z\",\n  \"durationMinutes\": 105\n}" }
+      }
+    },
+    {
+      "name": "5. Delete Showtime",
+      "request": {
+        "method": "DELETE",
+        "url": { "raw": "{{baseUrl}}/showtimes/{{showtimeId}}", "host": ["{{baseUrl}}"], "path": ["showtimes", "{{showtimeId}}"] }
+      }
+    },
+    {
+      "name": "Examples / Create - Evening",
+      "request": {
+        "method": "POST",
+        "header": [ { "key": "Content-Type", "value": "application/json" } ],
+        "url": { "raw": "{{baseUrl}}/showtimes", "host": ["{{baseUrl}}"], "path": ["showtimes"] },
+        "body": { "mode": "raw", "raw": "{\n  \"movieId\": \"{{movieId}}\",\n  \"roomId\": \"{{roomId}}\",\n  \"startTime\": \"2025-12-03T19:30:00.000Z\",\n  \"durationMinutes\": 120\n}" }
+      }
+    },
+    {
+      "name": "Examples / Create - Matinee",
+      "request": {
+        "method": "POST",
+        "header": [ { "key": "Content-Type", "value": "application/json" } ],
+        "url": { "raw": "{{baseUrl}}/showtimes", "host": ["{{baseUrl}}"], "path": ["showtimes"] },
+        "body": { "mode": "raw", "raw": "{\n  \"movieId\": \"{{movieId}}\",\n  \"roomId\": \"{{roomId}}\",\n  \"startTime\": \"2025-12-04T15:00:00.000Z\",\n  \"durationMinutes\": 90\n}" }
+      }
+    },
+    {
+      "name": "Examples / Create - Late Night",
+      "request": {
+        "method": "POST",
+        "header": [ { "key": "Content-Type", "value": "application/json" } ],
+        "url": { "raw": "{{baseUrl}}/showtimes", "host": ["{{baseUrl}}"], "path": ["showtimes"] },
+        "body": { "mode": "raw", "raw": "{\n  \"movieId\": \"{{movieId}}\",\n  \"roomId\": \"{{roomId}}\",\n  \"startTime\": \"2025-12-05T22:15:00.000Z\",\n  \"durationMinutes\": 105\n}" }
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:3000/api/v1" },
+    { "key": "movieId", "value": "00000000-0000-0000-0000-000000000000" },
+    { "key": "roomId", "value": "00000000-0000-0000-0000-000000000000" },
+    { "key": "showtimeId", "value": "00000000-0000-0000-0000-000000000000" }
+  ]
+}
+
+
