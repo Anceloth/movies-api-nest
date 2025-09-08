@@ -12,6 +12,7 @@ describe('Rooms CRUD (e2e)', () => {
     }).compile();
 
     app = moduleFixture.createNestApplication();
+    app.setGlobalPrefix('api/v1');
     await app.init();
   });
 
@@ -21,8 +22,9 @@ describe('Rooms CRUD (e2e)', () => {
 
   it('should create and get a room', async () => {
     // Create a room
+    const unique = `Sala Test E2E ${Date.now()}`;
     const createRoomDto = {
-      name: 'Sala Test E2E',
+      name: unique,
       capacity: 50,
     };
 
@@ -31,16 +33,16 @@ describe('Rooms CRUD (e2e)', () => {
       .send(createRoomDto)
       .expect(201);
 
-    const roomId = createResponse.body.data.data.id;
+    const roomId = createResponse.body.data.id;
 
     // Get the created room
     await request(app.getHttpServer())
       .get(`/api/v1/rooms/${roomId}`)
       .expect(200)
       .expect((res) => {
-        expect(res.body.data.data.name).toBe('Sala Test E2E');
-        expect(res.body.data.data.capacity).toBe(50);
-        expect(res.body.data.data.isActive).toBe(true);
+        expect(res.body.data.name).toBe(unique);
+        expect(res.body.data.capacity).toBe(50);
+        expect(res.body.data.isActive).toBe(true);
       });
   });
 
@@ -49,11 +51,11 @@ describe('Rooms CRUD (e2e)', () => {
       .get('/api/v1/rooms?page=1&limit=10')
       .expect(200)
       .expect((res) => {
-        expect(res.body.data.data).toHaveProperty('rooms');
-        expect(res.body.data.data).toHaveProperty('total');
-        expect(res.body.data.data).toHaveProperty('page');
-        expect(res.body.data.data).toHaveProperty('limit');
-        expect(Array.isArray(res.body.data.data.rooms)).toBe(true);
+        expect(res.body.data).toHaveProperty('rooms');
+        expect(res.body.data).toHaveProperty('total');
+        expect(res.body.data).toHaveProperty('page');
+        expect(res.body.data).toHaveProperty('limit');
+        expect(Array.isArray(res.body.data.rooms)).toBe(true);
       });
   });
 });

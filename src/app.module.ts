@@ -7,6 +7,7 @@ import { AppController } from './presentation/controllers/app.controller';
 import { UserModule } from './infrastructure/modules/user.module';
 import { MovieModule } from './infrastructure/modules/movie.module';
 import { RoomModule } from './infrastructure/modules/room.module';
+import { ShowtimeModule } from './infrastructure/modules/showtime.module';
 import databaseConfig from './infrastructure/config/database.config';
 import appConfig from './infrastructure/config/app.config';
 import jwtConfig from './infrastructure/config/jwt.config';
@@ -39,6 +40,7 @@ import { ResponseInterceptor } from './shared/interceptors/response.interceptor'
     UserModule,
     MovieModule,
     RoomModule,
+    ShowtimeModule,
   ],
   controllers: [AppController],
   providers: [
