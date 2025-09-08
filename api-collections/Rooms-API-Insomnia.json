@@ -1,0 +1,327 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2025-09-08T00:36:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "req_001",
+      "parentId": "fld_001",
+      "modified": 1725744000000,
+      "created": 1725744000000,
+      "url": "{{ _.baseUrl }}/rooms",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"Sala 1\",\n  \"capacity\": 50\n}"
+      },
+      "name": "1. Create Room",
+      "description": "Creates a new room in the system",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "parameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_002",
+      "parentId": "fld_001",
+      "modified": 1725744000000,
+      "created": 1725744000000,
+      "url": "{{ _.baseUrl }}/rooms",
+      "method": "GET",
+      "body": {},
+      "name": "2. Get All Rooms",
+      "description": "Gets all active rooms",
+      "headers": [],
+      "authentication": {},
+      "parameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_003",
+      "parentId": "fld_001",
+      "modified": 1725744000000,
+      "created": 1725744000000,
+      "url": "{{ _.baseUrl }}/rooms?page=1&limit=5",
+      "method": "GET",
+      "body": {},
+      "name": "2.1. Get Rooms with Pagination",
+      "description": "Gets rooms with specific pagination",
+      "headers": [],
+      "authentication": {},
+      "parameters": [
+        {
+          "name": "page",
+          "value": "1",
+          "description": "Page number"
+        },
+        {
+          "name": "limit",
+          "value": "5",
+          "description": "Page size"
+        }
+      ],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_004",
+      "parentId": "fld_001",
+      "modified": 1725744000000,
+      "created": 1725744000000,
+      "url": "{{ _.baseUrl }}/rooms?activeOnly=true",
+      "method": "GET",
+      "body": {},
+      "name": "2.2. Get Only Active Rooms",
+      "description": "Gets only active rooms",
+      "headers": [],
+      "authentication": {},
+      "parameters": [
+        {
+          "name": "activeOnly",
+          "value": "true",
+          "description": "Only active rooms"
+        }
+      ],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_005",
+      "parentId": "fld_001",
+      "modified": 1725744000000,
+      "created": 1725744000000,
+      "url": "{{ _.baseUrl }}/rooms/{{ _.roomId }}",
+      "method": "GET",
+      "body": {},
+      "name": "3. Get Room by ID",
+      "description": "Gets a specific room by its ID",
+      "headers": [],
+      "authentication": {},
+      "parameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_006",
+      "parentId": "fld_001",
+      "modified": 1725744000000,
+      "created": 1725744000000,
+      "url": "{{ _.baseUrl }}/rooms/{{ _.roomId }}",
+      "method": "PATCH",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"Sala 1 - VIP\",\n  \"capacity\": 40\n}"
+      },
+      "name": "4. Update Room",
+      "description": "Updates an existing room",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "parameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_007",
+      "parentId": "fld_001",
+      "modified": 1725744000000,
+      "created": 1725744000000,
+      "url": "{{ _.baseUrl }}/rooms/{{ _.roomId }}",
+      "method": "DELETE",
+      "body": {},
+      "name": "5. Delete Room",
+      "description": "Deletes a room from the system",
+      "headers": [],
+      "authentication": {},
+      "parameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_008",
+      "parentId": "fld_002",
+      "modified": 1725744000000,
+      "created": 1725744000000,
+      "url": "{{ _.baseUrl }}/rooms",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"Sala Pequeña\",\n  \"capacity\": 20\n}"
+      },
+      "name": "Create - Small Room",
+      "description": "Creates a small room with 20 seats",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "parameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_009",
+      "parentId": "fld_002",
+      "modified": 1725744000000,
+      "created": 1725744000000,
+      "url": "{{ _.baseUrl }}/rooms",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"Sala Grande\",\n  \"capacity\": 150\n}"
+      },
+      "name": "Create - Large Room",
+      "description": "Creates a large room with 150 seats",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "parameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_010",
+      "parentId": "fld_002",
+      "modified": 1725744000000,
+      "created": 1725744000000,
+      "url": "{{ _.baseUrl }}/rooms",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"Sala VIP\",\n  \"capacity\": 30\n}"
+      },
+      "name": "Create - VIP Room",
+      "description": "Creates a VIP room with 30 seats",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "parameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_001",
+      "parentId": "wrk_001",
+      "modified": 1725744000000,
+      "created": 1725744000000,
+      "name": "Rooms - CRUD",
+      "description": "Main collection to test room CRUD operations",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1725744000000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_002",
+      "parentId": "wrk_001",
+      "modified": 1725744000000,
+      "created": 1725744000000,
+      "name": "Room Examples",
+      "description": "Example rooms to create",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1725744000000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_001",
+      "parentId": null,
+      "modified": 1725744000000,
+      "created": 1725744000000,
+      "name": "Rooms API - Cinema System",
+      "description": "REST API for room management in the cinema system",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_001",
+      "parentId": "wrk_001",
+      "modified": 1725744000000,
+      "created": 1725744000000,
+      "name": "Base Environment",
+      "data": {
+        "baseUrl": "http://localhost:3000/api/v1",
+        "roomId": "90033202-07d5-45f1-bc31-d34a65c45be0"
+      },
+      "dataPropertyOrder": {
+        "&": ["baseUrl", "roomId"]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1725744000000,
+      "_type": "environment"
+    }
+  ]
+}

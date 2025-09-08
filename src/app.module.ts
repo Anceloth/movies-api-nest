@@ -6,6 +6,7 @@ import { ThrottlerModule } from '@nestjs/throttler';
 import { AppController } from './presentation/controllers/app.controller';
 import { UserModule } from './infrastructure/modules/user.module';
 import { MovieModule } from './infrastructure/modules/movie.module';
+import { RoomModule } from './infrastructure/modules/room.module';
 import databaseConfig from './infrastructure/config/database.config';
 import appConfig from './infrastructure/config/app.config';
 import jwtConfig from './infrastructure/config/jwt.config';
@@ -37,6 +38,7 @@ import { ResponseInterceptor } from './shared/interceptors/response.interceptor'
     }),
     UserModule,
     MovieModule,
+    RoomModule,
   ],
   controllers: [AppController],
   providers: [
