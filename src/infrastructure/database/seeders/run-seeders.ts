@@ -3,6 +3,8 @@ import { DataSource } from 'typeorm';
 import { ConfigService } from '@nestjs/config';
 import { MainSeeder } from './main.seeder';
 import { UserModel } from '../../models/user.model';
+import { MovieModel } from '../../models/movie.model';
+import { RoomModel } from '../../models/room.model';
 
 // Load environment variables
 import * as dotenv from 'dotenv';
@@ -29,7 +31,7 @@ const AppDataSource = new DataSource({
   database: configService.get('DB_DATABASE'),
   synchronize: false, // Don't auto-sync in seeders
   logging: configService.get('DB_LOGGING') === 'true',
-  entities: [UserModel],
+  entities: [UserModel, MovieModel, RoomModel],
 });
 
 async function runSeeders() {
